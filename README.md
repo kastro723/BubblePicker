@@ -12,8 +12,7 @@
 
 -------------------------------------------------------------------------------------
 
-![image](https://github.com/kastro723/BubblePicker/assets/55536937/de475fde-4112-431f-9562-b1786487565e)
-![image](https://github.com/kastro723/BubblePicker/assets/55536937/20131b39-70c3-4fd2-a147-20f8cb87e283)
+![image](https://github.com/kastro723/BubblePicker/assets/55536937/de475fde-4112-431f-9562-b1786487565e)![image](https://github.com/kastro723/BubblePicker/assets/55536937/20131b39-70c3-4fd2-a147-20f8cb87e283)
 ![image](https://github.com/kastro723/BubblePicker/assets/55536937/eeaf62ec-32d7-4839-b50b-181d5cad9d52)
 
 
