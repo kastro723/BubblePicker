@@ -28,7 +28,8 @@
             Inspector의 Fit 버튼 및 fit 메서드를 통한 동적 조정
             Text의 패딩 및 간격 설정
             Bubble(Image)의 확장 유형(MoveType)을 지원하여, Text의 크기 및 길이에 따른 Bubble의 확장 방향 설정
-            Bubble(Image) 내에서 Text의 정렬 유형(TextSort)를 제공하여 Left, Center, Right 방향으로 Text의 위치를 유연하게 조정
+            Bubble(Image) 내에서 Text Box의 정렬 유형(TextSort)를 제공
+                (Left, Center, Right 방향으로 Text Box의 위치를 조정 가능)
 
 
     [옵션설명]
