@@ -3,7 +3,7 @@
     [패치 노트]
 
             v1.1.0 - 24.04.20
-                   - Text 정렬 및 선택 기능 추가 (Text Sort)
+                   - Image 내의 Text Box 정렬 및 선택 기능 추가 (Text Sort)
                    - Fit 버튼을 통해 Text 위치를 image(bubble) 안으로 이동되게 수정
                    
             
