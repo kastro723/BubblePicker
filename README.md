@@ -29,7 +29,7 @@
             Text의 패딩 및 간격 설정
             Bubble(Image)의 확장 유형(MoveType)을 지원하여, Text의 크기 및 길이에 따른 Bubble의 확장 방향 설정
             Bubble(Image) 내에서 Text Box의 정렬 유형(TextSort)을 설정
-                (Left, Center, Right 방향으로 Text Box의 위치를 조정 가능)
+                (Left, Center, Right 방향으로 Image 내에서 Text Box의 위치를 조정 가능)
 
 
     [옵션설명]
