@@ -1,21 +1,21 @@
-// Ver. 2.0.0
-// Updated: 2024-04-24
+// Ver. 2.0.2
+// Updated: 2024-04-25
 
-using UnityEngine;
-using UnityEditor;
 using TMPro;
+using UnityEditor;
+using UnityEngine;
 using UnityEngine.UI;
 
-[CustomEditor(typeof(UITutorialBox))]
-public class UITutorialBoxEditor : Editor
+[CustomEditor(typeof(UIBubblePicker))]
+public class UIBubblePickerEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
 
-        UITutorialBox script = (UITutorialBox)target;
+        UIBubblePicker script = (UIBubblePicker)target;
 
-        if (GUILayout.Button("Show"))
+        if (GUILayout.Button("Fit"))
         {
             // 컴포넌트 초기화 검사 및 처리
             if (script.GetText() == null)
@@ -49,20 +49,21 @@ public class UITutorialBoxEditor : Editor
             }
             if (script.GetCanvas() == null)
             {
-                script.SetCanvas(script.GetComponentInParent<Canvas>());
-                if (script.GetFitter() == null)
+                script.SetCanvas(script.GetComponent<Canvas>());
+                if (script.GetCanvas() == null)
                 {
                     Debug.LogError("Canvas component is not found.");
                     return;
                 }
             }
-       
+
 
 
             // 강제 캔버스 업데이트 후 Show 메서드 호출
+            // 첫 번째 호출이 레이아웃 변경을 초기화하고, 두 번째 호출이 이 변경사항을 확정적으로 적용
             Canvas.ForceUpdateCanvases();
-
-            script.Show(script.picker.transform.position,script.moveType,script.textSort,script.text.text);
+            script.Fit();
+            script.Fit();
         }
     }
 }
