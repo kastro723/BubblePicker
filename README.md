@@ -33,8 +33,7 @@
     
             지정된 Picker의 위치에 따라 Bubble(Bg)과 Text의 크기와 위치를 조정하는 다양한 기능을 제공
 
-            Inspector의 Fit 버튼 및 Show 메서드를 통한 동적 조정
-            Text의 패딩 및 간격 설정
+            션 설정
             Bubble(Bg)의 확장 유형(MoveType)을 지원하여, Text의 크기 및 길이에 따른 Bubble의 확장 방향 설정
             Bubble(Bg) 내에서 Text Box의 정렬 유형(TextSort)을 설정
                 (Left, Center, Right 방향으로 Bg 내에서 Text Box의 위치를 조정 가능)
