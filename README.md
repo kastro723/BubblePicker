@@ -41,6 +41,7 @@
 
 
     [옵션설명]
+    
             Bg Fitter - Bg Content Size Fitter
             Text - UI Text(TextMeshPro)
             Bg - Bubble Sprite
