@@ -2,10 +2,6 @@
 
     [패치 노트]
     
-    	    v2.0.2 - 24.05.28
-                   - Bg와 Picker가 이동하는 기준 PickerTrans로 설정
-                   - PickerTrans의 좌표 설정 및 이동으로 Bubble과 Picker 이동 가능하게 수정
-		   
             v2.0.2 - 24.04.25
                    - 코드 버그 수정
                    - Font Size 설정 추가
