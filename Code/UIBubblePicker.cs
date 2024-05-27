@@ -1,6 +1,7 @@
-// Ver. 2.0.2
-// Updated: 2024-04-25
+// Ver. 2.0.3
+// Updated: 2024-05-28
 
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,7 @@ public class UIBubblePicker : MonoBehaviour
     public TextMeshProUGUI text; // 텍스트 
     public Image bg; // 배경 이미지 좌표
     public Image picker; // picker 이미지 좌표
+    public Transform pickerTrans; // pickerTrans(picker의 원점의 위치)
 
     public float pickerOffsetY = 0; // bg와 picker의 접합 높이 조정
 
@@ -34,6 +36,7 @@ public class UIBubblePicker : MonoBehaviour
 
     public eMoveType moveType = eMoveType.Up; // 기본은 Up으로 지정
     public eTextSort textSort = eTextSort.Left; // 기본은 Left로 지정
+
 
 
 
@@ -85,13 +88,13 @@ public class UIBubblePicker : MonoBehaviour
 
 
     //튜토리얼 박스를 표시하는 메서드 (Code)
-    public void Show(Vector3 worldPosition, eMoveType moveType, eTextSort textSort, string message)
+    public void Show(string message, eMoveType moveType, eTextSort textSort)
     {
         this.moveType = moveType;
         this.textSort = textSort;
 
-        Debug.Log($"Picker Position: {worldPosition}, MoveType: {moveType}, TextSort: {textSort}, Message: {message}");
-        Debug.Log($"<color=yellow>[튜토리얼] : {moveType}, {textSort}, {message}</color>");
+        Debug.Log($"Message: {message}, PickerTrans Position: {pickerTrans.position}, MoveType: {moveType}, TextSort: {textSort}");
+        Debug.Log($"<color=yellow>[튜토리얼] : {message}, {moveType}, {textSort} </color>");
 
         float textHeight = this.text.preferredHeight;
 
@@ -107,7 +110,7 @@ public class UIBubblePicker : MonoBehaviour
 
             picker.rectTransform.pivot = new Vector2(0.5f, 0f);
 
-            Vector3 pickerWorldPosition = worldPosition;  // 월드 좌표
+            Vector3 pickerWorldPosition = pickerTrans.position;  // 월드 좌표
             Vector3 pickerScreenPosition = Camera.main.WorldToScreenPoint(pickerWorldPosition);  // 스크린 좌표
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, pickerScreenPosition, canvas.worldCamera, out Vector2 localPosition);
 
@@ -121,7 +124,7 @@ public class UIBubblePicker : MonoBehaviour
 
             picker.rectTransform.pivot = new Vector2(0.5f, 0f);
 
-            Vector3 pickerWorldPosition = worldPosition;  // 월드 좌표
+            Vector3 pickerWorldPosition = pickerTrans.position;  // 월드 좌표
             Vector3 pickerScreenPosition = Camera.main.WorldToScreenPoint(pickerWorldPosition);  // 스크린 좌표
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, pickerScreenPosition, canvas.worldCamera, out Vector2 localPosition);
 
@@ -163,15 +166,21 @@ public class UIBubblePicker : MonoBehaviour
         bgFitter.SetLayoutVertical();
 
         // 첫 번째 호출(Show)이 레이아웃 변경을 초기화하고, 두 번째 호출(Fit)이 이 변경사항을 확정적으로 적용
-        Fit();
+        Fits();
 
     }
 
-    //튜토리얼 박스를 표시하는 메서드 (Editor)
-    public void Fit()
+    public void Fit() 
     {
-        Debug.Log($"Picker Position: {picker.transform.position}, MoveType: {moveType}, TextSort: {textSort}, Message: {text.text}");
-        Debug.Log($"<color=yellow>[튜토리얼] : {moveType}, {textSort}, {text.text}</color>");
+        Fits();
+        Fits();
+    }
+
+    //튜토리얼 박스를 표시하는 메서드 (Editor)
+    private void Fits()
+    {
+        Debug.Log($"Message: {text.text}, PickerTrans Position: {pickerTrans.position}, MoveType: {moveType}, TextSort: {textSort}");
+        Debug.Log($"<color=yellow>[튜토리얼] : {text.text}, {moveType}, {textSort}</color>");
 
         float textHeight = this.text.preferredHeight;
 
@@ -188,10 +197,11 @@ public class UIBubblePicker : MonoBehaviour
 
             picker.rectTransform.pivot = new Vector2(0.5f, 0f);
 
-            Vector3 pickerWorldPosition = picker.transform.position;  // 월드 좌표
+            Vector3 pickerWorldPosition = pickerTrans.position;  // 월드 좌표
             Vector3 pickerScreenPosition = Camera.main.WorldToScreenPoint(pickerWorldPosition);  // 스크린 좌표
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, pickerScreenPosition, canvas.worldCamera, out Vector2 localPosition);
+            picker.rectTransform.localPosition = localPosition;
             bg.rectTransform.localPosition = new Vector3(0, localPosition.y + picker.rectTransform.rect.height - pickerOffsetY, 0);
         }
         else if (moveType == eMoveType.Down)
@@ -201,10 +211,11 @@ public class UIBubblePicker : MonoBehaviour
 
             picker.rectTransform.pivot = new Vector2(0.5f, 0f);
 
-            Vector3 pickerWorldPosition = picker.transform.position;  // 월드 좌표
+            Vector3 pickerWorldPosition = pickerTrans.position;  // 월드 좌표
             Vector3 pickerScreenPosition = Camera.main.WorldToScreenPoint(pickerWorldPosition);  // 스크린 좌표
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, pickerScreenPosition, canvas.worldCamera, out Vector2 localPosition);
+            picker.rectTransform.localPosition = localPosition;
             bg.rectTransform.localPosition = new Vector3(0, localPosition.y - picker.rectTransform.rect.height + pickerOffsetY, 0);
 
         }
@@ -239,7 +250,6 @@ public class UIBubblePicker : MonoBehaviour
         Canvas.ForceUpdateCanvases();
         bgFitter.SetLayoutHorizontal();
         bgFitter.SetLayoutVertical();
-
 
     }
 

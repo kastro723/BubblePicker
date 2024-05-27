@@ -1,5 +1,5 @@
-// Ver. 2.0.2
-// Updated: 2024-04-25
+// Ver. 2.0.3
+// Updated: 2024-05-28
 
 using TMPro;
 using UnityEditor;
@@ -62,7 +62,6 @@ public class UIBubblePickerEditor : Editor
             // 강제 캔버스 업데이트 후 Show 메서드 호출
             // 첫 번째 호출이 레이아웃 변경을 초기화하고, 두 번째 호출이 이 변경사항을 확정적으로 적용
             Canvas.ForceUpdateCanvases();
-            script.Fit();
             script.Fit();
         }
     }
