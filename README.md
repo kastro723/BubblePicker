@@ -4,7 +4,8 @@
     
             v2.0.3 - 24.05.28
                    - Bg와 Picker가 이동하는 기준 PickerTrans로 설정
-                   - PickerTrans의 좌표 설정 및 이동으로 Bubble과 Picker 이동 가능하게 수정
+                   - PickerTrans의 좌표 설정 및 이동으로 
+                     Bubble과 Picker를 이동 가능하게 수정
                    
             v2.0.2 - 24.04.25
                    - 코드 버그 수정
@@ -12,7 +13,8 @@
                    - Script 부착 위치 최상위(BubblePicker)로 변경
                    
             v2.0.0 - 24.04.24
-                   - World Position을 통해 정확한 위치 및 배치 구현을 위한 전체적인 코드 수정
+                   - World Position을 통해 정확한 위치 및 배치 구현을 위한 
+                     전체적인 코드 수정
                    - Image -> Bg 이름 수정
                    
             v1.1.0 - 24.04.20
@@ -36,12 +38,14 @@
 
     [기능설명]
     
-            지정된 Picker의 위치에 따라 Bubble(Bg)과 Text의 크기와 위치를 조정하는 다양한 기능을 제공
+            지정된 Picker의 위치에 따라 Bubble(Bg)과 Text의 크기와 위치를 조정하는 
+            다양한 기능을 제공
 
-            션 설정
-            Bubble(Bg)의 확장 유형(MoveType)을 지원하여, Text의 크기 및 길이에 따른 Bubble의 확장 방향 설정
+            Bubble(Bg)의 확장 유형(MoveType)을 지원하여, Text의 크기 및 길이에 따른 
+            Bubble의 확장 방향 설정
+            
             Bubble(Bg) 내에서 Text Box의 정렬 유형(TextSort)을 설정
-                (Left, Center, Right 방향으로 Bg 내에서 Text Box의 위치를 조정 가능)
+            (Left, Center, Right 방향으로 Bg 내에서 Text Box의 위치를 조정 가능)
 
 
     [옵션설명]
@@ -58,9 +62,11 @@
             Vertical Padding - Text의 상, 하 padding
             Paragraph Spacing - Text의 엔터 간 간격
             Line Spacing - Text의 줄 간 간격
-            Use If Empty Text Default Size - Text가 없을 시 Image의 크기 (가로(x),  세로(y))
+            Use If Empty Text Default Size - Text가 없을 시 Image의 크기 
+                                             (가로(x),  세로(y))
             MoveType - Text의 크기 및 길이에 따른 Bg의 확장 방향 (Up, Down) 
             TextSort - Text의 정렬 방향 (Left, Center, Right)
             Fit - Fit 동작(메서드) 실행 
-                (Picker에 따른 Bg와 Text 위치 갱신, 설정된 수치로 Image 및 Text 수정 및 갱신)
+                (Picker에 따른 Bg와 Text 위치 갱신, 
+                설정된 수치로 Image 및 Text 수정 및 갱신)
             
